@@ -1,0 +1,19 @@
+  .carousel{
+    .carousel-indicators{
+      margin: 0;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      [data-bs-target]{
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        transition: 100ms;
+      }
+    }
+  }
+
+  .carousel-control-next-icon, .carousel-control-prev-icon{
+    background: none;
+  }

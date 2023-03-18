@@ -1,0 +1,61 @@
+  .dropdown-menu{
+    border-radius: 0;
+  }
+
+  .superior-dropdown{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    .offer{
+      display: none;
+      position: relative;
+
+      .superior-offer{
+        color: white;
+        padding-left: 20px;
+      }
+
+      &::before{
+        content: url(../media/tag.svg);
+        position: absolute;
+      }
+    }
+
+    .dropdown{
+      .btn-link{
+        color: white;
+        padding: 0;
+
+        &:nth-child(2n + 1){
+          margin-left: 10px;
+        }
+      }
+
+      .superior-account-btn{
+          display: none;
+      }
+    }
+
+  }
+
+  @include media-breakpoint-up(lg){
+    .superior-dropdown{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      .offer{
+          display: flex;
+          align-items: center;
+      }
+
+    }
+
+     .dropdown{
+      .superior-account-btn{
+        display: block;
+      }
+    }
+  }

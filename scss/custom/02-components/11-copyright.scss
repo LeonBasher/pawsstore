@@ -1,0 +1,33 @@
+  .right-container{
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .copyright-text{
+    text-align: center;
+    color: white;
+  }
+
+  .payments-methods{
+    display: flex;
+    justify-content: center;
+
+    .payment-icon{
+      + .payment-icon{
+        margin-left: 7px;
+      }
+
+      svg{
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg){
+    .payments-methods {
+      justify-content: flex-end;
+    }
+
+    .copyright-text {
+        text-align: left;
+    }
+  }

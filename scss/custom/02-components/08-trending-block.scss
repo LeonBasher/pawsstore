@@ -1,0 +1,374 @@
+
+
+   .trending-buttons{
+      justify-content: center;
+
+       + *{
+        margin-top: 15px;
+       }
+
+      .nav-item{
+        &:nth-child(1n + 2){
+          margin-left: 20px;
+        }
+
+        .trending-btn{
+          color: black;
+          font-size: 15px;
+          padding: 0;
+
+          &:hover{
+            color: #1cbbb6;
+          }
+
+          &.active{
+            background: none;
+            color:#1cbbb6;
+          }
+        }
+      }
+    }
+
+
+ .contains-trendings{
+    display: flex;
+    overflow: hidden;
+
+    .trending-item-col{
+      flex-shrink: 0;
+      transition: 300ms;
+      width: 50%;
+
+      .trending-col{
+        padding: 0 10px;
+      }
+    }
+  }
+
+  // .pagination-buttons{
+  //   width: 100%;
+  //   justify-content: center;
+  //
+  //   .trending-button{
+  //     color: black;
+  //     border: 1px rgba(35,35,35,.08) solid;
+  //     display: block;
+  //     width: 50px;
+  //     height: 50px;
+  //     flex: 0 0 auto;
+  //   }
+  // }
+
+  .contains-trending-expansor-button{
+    margin-top: 15px;
+    text-align: center;
+
+    .btn-secondary{
+      color: white;
+      &:hover{
+        background-color: #ffb558;
+        color: black;
+        border-color: #ffb558;
+      }
+    }
+  }
+
+  .trending-card{
+
+    .contains-trending-img{
+      position: relative;
+
+      img{
+        width: 100%;
+        height: 100%;
+      }
+
+      .badge-trending{
+        position: absolute;
+        top: 5px;
+        left: 5px;
+      }
+    }
+
+    .card-body{
+      text-align: center;
+
+      .trending-product-name{
+        font-size: 15px;
+      }
+
+      .trending-options{
+        .contains-product-cols{
+          display: flex;
+          justify-content: center;
+
+            .product-col{
+              width: 30px;
+              height: 30px;
+              cursor: pointer;
+
+            + .product-col{
+              margin-left: 10px;
+            }
+
+            .contains-product-option{
+              width: 100%;
+              height: 100%;
+              position: relative;
+              background-color: #1cbbb6;
+              transition: 300ms;
+
+              &:hover{
+                background-color: #ffb558;
+
+                svg{
+                  fill:black;
+                }
+              }
+
+              svg{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                fill: white;
+                transition: 300ms;
+              }
+            }
+          }
+
+          .big-cart-icon{
+            display: none;
+            background-color: #1cbbb6;
+            color: white;
+            padding: 0 5px;
+            transition: 500ms;
+            cursor: pointer;
+            min-width: 150px;
+            text-transform: uppercase;
+
+            &:hover{
+              background-color: #ffb558;
+              color: black
+            }
+
+            svg + *{
+              margin-left: 3px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  .featured-desktop-col{
+    .trending-card{
+      &:hover{
+        .card-body{
+        }
+      }
+    }
+  }
+
+   .desktop-products-container{
+     display: none;
+   }
+
+  .trending-buttons-container {
+    text-align: center;
+
+    .pagination-counter {
+      display: inline-block;
+      height: 100%;
+      min-width: 70px;
+      color: #232323;
+      font-size: 12px;
+    }
+
+    .btn {
+      padding: 0;
+      width: 41px;
+      height: 41px;
+
+      &.btn-light {
+
+      }
+    }
+  }
+
+  .trending-carousel{
+    .carousel-item{
+      transition: 300ms;
+
+      &.active{
+        display: flex;
+      }
+
+      .trending-card {
+        width: 50%;
+
+        &:nth-child(1n + 2) {
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .carousel-item-next{
+      display: flex;
+      transform: translateX(50%);
+    }
+
+    .carousel-item-prev{
+      display: flex;
+      transform: translateX(-50%);
+    }
+
+    .carousel-item-end{
+      transform: translateX(0);
+
+      &.active{
+        transform: translateX(50%);
+        opacity: 0;
+      }
+    }
+
+    .carousel-item-start{
+      transform: translateX(0);
+
+      &.active{
+        transform: translateX(-50%);
+        opacity: 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md){
+    .trending-card{
+      .contains-trending-img{
+        .badge-trending{
+          width: 50px;
+          height: 50px;
+          border-radius: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      .card-body{
+        .trending-options{
+          .contains-product-cols{
+            width: 100%;
+            position: relative;
+            justify-content: center;
+
+            .product-col{
+              + .product-col{
+              }
+            }
+
+            .eye-icon{
+            }
+
+            .cart-icon{
+              display: none;
+            }
+
+            .big-cart-icon{
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .whishlist-icon{
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg){
+    .products-container{
+        display: none;
+    }
+
+    .desktop-products-container{
+        display: block;
+    }
+
+    .trending-card{
+      .contains-trending-img{
+        .badge-trending{
+        }
+      }
+
+      .card-body{
+        .trending-options{
+          .contains-product-cols{
+            width: 100%;
+            position: relative;
+            justify-content: center;
+
+            .product-col{
+              + .product-col{
+              }
+            }
+
+            .eye-icon{
+            }
+
+            .cart-icon{
+              display: block;
+            }
+
+            .big-cart-icon{
+              display: none;
+            }
+
+            .whishlist-icon{
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xxl){
+    .trending-card{
+      .contains-trending-img{
+        .badge-trending{
+        }
+      }
+
+      .card-body{
+        .trending-options{
+          .contains-product-cols{
+            width: 100%;
+            position: relative;
+            justify-content: center;
+
+            .product-col{
+              + .product-col{
+              }
+            }
+
+            .eye-icon{
+            }
+
+            .cart-icon{
+              display: none;
+            }
+
+            .big-cart-icon{
+              display: flex;
+            }
+
+            .whishlist-icon{
+            }
+          }
+        }
+      }
+    }
+  }

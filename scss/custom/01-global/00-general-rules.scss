@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'Alex Brush';
+    src: url(../fonts/Alex_Brush/AlexBrush-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    src: url(../fonts/Poppins/Poppins-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: 'Poppins Medium';
+    src: url(../fonts/Poppins/Poppins-Medium.ttf);
+  }
+
+  @font-face {
+    font-family: 'Poppins Light';
+    src: url(../fonts/Poppins/Poppins-Light.ttf);
+  }
+
+  @font-face {
+    font-family: 'Montserrat';
+    src: url(../fonts/Montserrat/Montserrat-Medium.ttf);
+  }
+
+p {
+    font-family: 'Poppins';
+    margin: 0;
+    word-break: break-word;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: 'Montserrat';
+  }
+
+  p + * {
+    margin-top: 15px;
+  }
+
+  h1 + *, h2 + *, h3 + *, h4 + *, h5 + *, h6 + * {
+    margin-top: 15px;
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  hr {
+    margin: 0;
+  }
+
+  .bg-wheat {
+    background-color: #fdf3df;
+  }
+
+  .contains-titles {
+    text-align: center;
+
+    h2 {
+        font-family: 'Montserrat';
+        color: black;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
+
+    hr {
+        color: #1cbbb6;
+        width: 50%;
+        border: none;
+        height: 3px;
+        background-color: #1cbbb6;
+        margin: 10px auto 0;
+        opacity: 1;
+    }
+  }
+
+  .contains-titles {
+    + * {
+      margin-top: 20px;
+    }
+  }
+
+  .margin-none {
+    margin: 0;
+  }
+
+  .padding-none {
+    padding: 0;
+  }
+
+  .price {
+    span {
+      color:#a4a4a4;
+      text-decoration: line-through;
+      font-size: 14px;
+    }
+  }
