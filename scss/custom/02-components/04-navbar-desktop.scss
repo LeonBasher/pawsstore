@@ -16,6 +16,14 @@
                 margin-left: 15px;
               }
 
+              &.nav-tag{
+                position: relative;
+
+                .badge {
+                  position: absolute;
+                }
+              }
+
               .nav-link{
                 padding: 0;
               }
