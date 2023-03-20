@@ -1,6 +1,4 @@
-
-
-   .trending-buttons{
+    .trending-buttons{
       justify-content: center;
 
        + *{
@@ -29,6 +27,9 @@
       }
     }
 
+  .trending-product-name{
+    font-size: 12px;
+  }
 
  .contains-trendings{
     display: flex;
@@ -45,20 +46,6 @@
     }
   }
 
-  // .pagination-buttons{
-  //   width: 100%;
-  //   justify-content: center;
-  //
-  //   .trending-button{
-  //     color: black;
-  //     border: 1px rgba(35,35,35,.08) solid;
-  //     display: block;
-  //     width: 50px;
-  //     height: 50px;
-  //     flex: 0 0 auto;
-  //   }
-  // }
-
   .contains-trending-expansor-button{
     margin-top: 15px;
     text-align: center;
@@ -74,7 +61,6 @@
   }
 
   .trending-card{
-
     .contains-trending-img{
       position: relative;
 
@@ -90,12 +76,8 @@
       }
     }
 
-    .card-body{
+    .trending-body{
       text-align: center;
-
-      .trending-product-name{
-        font-size: 15px;
-      }
 
       .trending-options{
         .contains-product-cols{
@@ -165,7 +147,7 @@
   .featured-desktop-col{
     .trending-card{
       &:hover{
-        .card-body{
+        .trending-body{
         }
       }
     }
@@ -244,7 +226,13 @@
   }
 
   @include media-breakpoint-up(md){
+    .trending-product-name{
+      font-size: 14px;
+    }
+
     .trending-card{
+      cursor: pointer;
+
       .contains-trending-img{
         .badge-trending{
           width: 50px;
@@ -256,22 +244,28 @@
         }
       }
 
-      .card-body{
+      .trending-body{
         .trending-options{
+          overflow: hidden;
+
           .contains-product-cols{
             width: 100%;
             position: relative;
             justify-content: center;
 
-            .product-col{
-              + .product-col{
-              }
+            .product-col + .product-col {
+              margin: 0;
             }
 
             .eye-icon{
+              position: absolute;
+              left: -100%;
+              transition: 400ms;
             }
 
             .cart-icon{
+              opacity: 0;
+              transition: 400ms;
               display: none;
             }
 
@@ -279,12 +273,40 @@
               display: flex;
               align-items: center;
               justify-content: center;
+              opacity: 0;
+              transition: 400ms;
             }
 
-            .whishlist-icon{
+            .wishlist-icon{
+              position: absolute;
+              right: -100%;
+              transition: 400ms;
             }
           }
         }
+      }
+
+      &:hover{
+        .trending-options{
+          .contains-product-cols{
+            .eye-icon{
+              left: 50px;
+            }
+
+            .cart-icon{
+              opacity: 1;
+            }
+
+            .big-cart-icon{
+              opacity: 1;
+
+            }
+
+            .wishlist-icon{
+              right: 50px;
+            }
+          }
+        }    
       }
     }
   }
@@ -292,6 +314,10 @@
   @include media-breakpoint-up(lg){
     .products-container{
         display: none;
+    }
+
+    .trending-product-name{
+      font-size: 12px;
     }
 
     .desktop-products-container{
@@ -304,7 +330,7 @@
         }
       }
 
-      .card-body{
+      .trending-body{
         .trending-options{
           .contains-product-cols{
             width: 100%;
@@ -332,6 +358,29 @@
           }
         }
       }
+
+      &:hover{
+        .trending-options{
+          .contains-product-cols{
+            .eye-icon{
+              left: 50px;
+            }
+
+            .cart-icon{
+              opacity: 1;
+            }
+
+            .big-cart-icon{
+              opacity: 1;
+
+            }
+
+            .wishlist-icon{
+              right: 50px;
+            }
+          }
+        }    
+      }
     }
   }
 
@@ -342,7 +391,7 @@
         }
       }
 
-      .card-body{
+      .trending-body{
         .trending-options{
           .contains-product-cols{
             width: 100%;
@@ -369,6 +418,29 @@
             }
           }
         }
+      }
+
+      &:hover{
+        .trending-options{
+          .contains-product-cols{
+            .eye-icon{
+              left: 30px;
+            }
+
+            .cart-icon{
+              opacity: 1;
+            }
+
+            .big-cart-icon{
+              opacity: 1;
+
+            }
+
+            .wishlist-icon{
+              right: 30px;
+            }
+          }
+        }    
       }
     }
   }
