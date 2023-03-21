@@ -9887,6 +9887,8 @@ img {
     max-width: 1300px; }
     .testimonial-container .row {
       align-items: center; }
+  .testimonial-col + .testimonial-col {
+    margin-top: 0; }
   .testimonial-col #carousel-testimonial .testimonial-indicators {
     position: absolute;
     flex-direction: column;

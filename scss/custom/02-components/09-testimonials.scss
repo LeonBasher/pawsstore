@@ -167,6 +167,7 @@
   }
 
   @include media-breakpoint-up(xxl){
+
     .testimonial-container{
       max-width: 1300px;
 
@@ -176,6 +177,10 @@
     }
 
      .testimonial-col{
+       + .testimonial-col{
+         margin-top: 0;
+       }
+       
        #carousel-testimonial{
          .testimonial-indicators{
            position: absolute;
