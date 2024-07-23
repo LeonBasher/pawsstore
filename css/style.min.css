@@ -10474,6 +10474,29 @@ img {
     .blogs-inner .carousel-item-start.active {
       transform: translateX(-33.33333%); } }
 
+/* Basic styles for the custom context menu */
+.custom-context-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 200px; }
+  .custom-context-menu .buttons-list {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0; }
+    .custom-context-menu .buttons-list button {
+      width: 100%;
+      border: none;
+      background-color: transparent;
+      padding: 8px 12px;
+      cursor: pointer;
+      text-align: left; }
+      .custom-context-menu .buttons-list button:hover {
+        background-color: #f8f8f8; }
+
 /**
  * Components.
  */

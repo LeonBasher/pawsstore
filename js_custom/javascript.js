@@ -1,3 +1,78 @@
+  // Context custom menu.
+  let clickedElement = null;
+  
+  // JavaScript to handle custom context menu
+  // const target = document.getElementById('target');
+  const target = document;
+  const customContextMenu = document.getElementById('customContextMenu');
+  const openLinkItem = document.getElementById('openLink');
+  const copyLinkItem = document.getElementById('copyLink');
+  const copySelectedTextItem = document.getElementById('copySelectedText');
+  
+  target.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    clickedElement = e.target;
+  
+    // Reset and hide all menu items
+    openLinkItem.style.display = 'none';
+    copyLinkItem.style.display = 'none';
+    copySelectedTextItem.style.display = 'none';
+  
+    // Show relevant menu items based on the clicked element
+    if (clickedElement.tagName === 'A') {
+      openLinkItem.style.display = 'block';
+      copyLinkItem.style.display = 'block';
+    } else if (window.getSelection().toString()) {
+      copySelectedTextItem.style.display = 'block';
+    }
+  
+    // Check if any menu item is visible
+    const anyVisible = openLinkItem.style.display === 'block' || copyLinkItem.style.display === 'block' || copySelectedTextItem.style.display === 'block';
+    if (anyVisible) {
+      customContextMenu.style.display = 'block';
+      customContextMenu.style.left = `${e.pageX}px`;
+      customContextMenu.style.top = `${e.pageY}px`;
+    }
+  });
+  
+  document.addEventListener('click', function() {
+    customContextMenu.style.display = 'none';
+  });
+  
+  function openLink() {
+    if (clickedElement.tagName === 'A') {
+      window.open(clickedElement.href, '_blank');
+    }
+    customContextMenu.style.display = 'none';
+  }
+  
+  function copyLink() {
+    if (clickedElement.tagName === 'A') {
+      navigator.clipboard.writeText(clickedElement.href).then(() => {
+      });
+    }
+    customContextMenu.style.display = 'none';
+  }
+  
+  function copySelectedText() {
+    let selectedText = window.getSelection().toString();
+    
+    if (selectedText) {
+      // Create a temporary textarea element to copy the selected text
+      let textarea = document.createElement('textarea');
+      textarea.value = selectedText;
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+      } catch (err) {
+        console.error('Failed to copy text', err);
+      }
+      document.body.removeChild(textarea);
+    }
+    customContextMenu.style.display = 'none';
+  }
+  
   document.addEventListener("DOMContentLoaded", function(){
 
     document.querySelectorAll('.sidebar .nav-link').forEach(function(element){
